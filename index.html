@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Сфера Судьбы</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body
+    class="bg-gradient-to-br from-purple-900 to-indigo-900 min-h-screen flex flex-col items-center justify-center p-4 font-sans text-white"
+  >
+    <div class="max-w-md w-full mx-auto">
+      <h1
+        class="text-4xl font-bold text-center mb-2 flex items-center justify-center"
+      >
+        <i class="fas fa-crystal mr-3 text-purple-300"></i>
+        Сфера Судьбы
+        <i class="fas fa-crystal ml-3 text-purple-300"></i>
+      </h1>
+      <p class="text-center text-purple-200 mb-8">
+        Задайте вопрос и получите ответ от вселенной
+      </p>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl mb-8">
+        <div class="relative">
+          <textarea
+            id="questionInput"
+            class="w-full bg-white/20 rounded-lg p-4 pr-12 text-white placeholder-purple-200 border border-white/20 focus:outline-none focus:ring-2 focus:ring-purple-400 resize-none"
+            rows="4"
+            placeholder="Задайте свой вопрос вселенной..."
+          ></textarea>
+          <button
+            id="clearBtn"
+            class="absolute right-3 top-3 text-purple-200 hover:text-white transition-colors"
+            title="Очистить"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <button
+          id="askBtn"
+          class="mt-4 w-full bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-3 px-4 rounded-lg shadow-lg transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center"
+        >
+          <i class="fas fa-magic mr-2"></i> Спросить Судьбу
+        </button>
+      </div>
+
+      <div class="relative flex justify-center mb-8">
+        <div
+          id="sphere"
+          class="w-48 h-48 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 sphere-shadow flex items-center justify-center transition-all duration-500"
+        >
+          <div id="sphereContent" class="text-center px-4">
+            <div id="initialText" class="text-xl font-medium text-white/80">
+              Задайте вопрос
+            </div>
+            <div
+              id="answerText"
+              class="hidden text-2xl font-bold answer-text"
+            ></div>
+          </div>
+        </div>
+
+        <div
+          id="glow"
+          class="absolute inset-0 rounded-full opacity-0 blur-xl bg-purple-400 pointer-events-none transition-opacity duration-300"
+        ></div>
+      </div>
+
+      <div class="bg-white/10 backdrop-blur-md rounded-xl p-6 shadow-xl">
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-xl font-bold flex items-center">
+            <i class="fas fa-history mr-2"></i> История ответов
+          </h2>
+          <button
+            id="clearHistoryBtn"
+            class="text-purple-200 hover:text-white transition-colors text-sm flex items-center"
+            title="Очистить историю"
+          >
+            <i class="fas fa-trash-alt mr-1"></i> Очистить
+          </button>
+        </div>
+        <div
+          id="historyList"
+          class="space-y-2 max-h-48 overflow-y-auto pr-2 history-scroll"
+        >
+          <!-- История будет добавляться здесь -->
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-8 text-center text-purple-300 text-sm">
+      <p>Сфера Судьбы дает ответы: 🟢 Да | 🔴 Нет | 🟡 Возможно</p>
+    </div>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
